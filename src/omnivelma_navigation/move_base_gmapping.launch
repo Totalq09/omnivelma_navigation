@@ -1,0 +1,21 @@
+<launch>
+  <master auto="start"/>
+  <param name="/use_sim_time" value="true"/>
+
+  <node pkg="omnivelma_navigation" name="omnivelma_speed_broadcaster" type="omnivelma_speed_broadcaster" output="screen">
+    <param name="cmd_receive_topic" value="cmd_vel" />
+    <param name="cmd_send_topic" value="omnivelma/vels" />
+    <param name="rotation" type="str" value="90" />
+  </node>
+
+  <node pkg="omnivelma_navigation" name="camera_tf_broadcaster" type="camera_tf_broadcaster" />
+  <node pkg="omnivelma_navigation" name="laser_tf_broadcaster" type="laser_tf_broadcaster" />
+
+  <include file="$(find ira_laser_tools)/launch/laserscan_multi_merger.launch" />
+
+ <node pkg="gmapping" name="slam_gmapping" type="slam_gmapping" args="scan:=/scan _base_frame:=omnivelma">
+    <param name="map_udpate_interval" value="2.0"/>
+    <param name="delta" value="0.04" />
+  </node>
+
+</launch>

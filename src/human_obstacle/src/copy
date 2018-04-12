@@ -1,0 +1,268 @@
+#include <human_obstacle/human_layer.h>
+//#include "human_layer.h"
+#include <pluginlib/class_list_macros.h>
+
+
+PLUGINLIB_EXPORT_CLASS(human_layer_namespace::HumanLayer, costmap_2d::Layer)
+
+using costmap_2d::LETHAL_OBSTACLE;
+using costmap_2d::NO_INFORMATION;
+using costmap_2d::FREE_SPACE;
+
+
+namespace human_layer_namespace 
+{
+    HumanLayer::HumanLayer() {};
+
+    void HumanLayer::onInitialize()
+    {
+        nh = new ros::NodeHandle("~/" + name_);
+        current_ = true;
+        default_value_ = NO_INFORMATION;
+        enabled_ = true;
+
+        master = layered_costmap_->getCostmap();
+
+        matchSize();
+
+         try{
+            omnivelma2cameraListener.waitForTransform("/omnivelma", "/camera_link", ros::Time(0), ros::Duration(3.0));
+            omnivelma2cameraListener.lookupTransform("/omnivelma", "/camera_link",
+                                    ros::Time(0), omnivelma2cameraTransform);
+        }
+            catch (tf::TransformException &ex) {
+            ROS_ERROR("%s",ex.what());
+            ros::Duration(1.0).sleep();
+            return;
+        }
+
+        faceSubscriber = nh->subscribe("/face_detector/faces_cloud", 1, &HumanLayer::faceCloudUpdate, this);
+
+        //ROS_WARN_STREAM("INITIALIZED\n");
+
+        dsrv_ = new dynamic_reconfigure::Server<costmap_2d::GenericPluginConfig>(*nh);
+        dynamic_reconfigure::Server<costmap_2d::GenericPluginConfig>::CallbackType cb = 
+            boost::bind(&HumanLayer::reconfigureCB, this, _1, _2);
+        dsrv_->setCallback(cb);
+    }
+
+    void HumanLayer::faceCloudUpdate (const sensor_msgs::PointCloudConstPtr& input)
+    {
+        {
+            std::lock_guard<std::mutex> lock(mutex);
+
+              try{
+                odom2omnivelmaListener.waitForTransform("/odom", "/omnivelma", ros::Time(0), ros::Duration(1.0));
+                odom2omnivelmaListener.lookupTransform("/odom", "/omnivelma",
+                                        ros::Time(0), odom2omnivelmaTransform);
+
+                odom2omnivelmaListener.waitForTransform("/map", "/odom", ros::Time(0), ros::Duration(1.0));
+                odom2omnivelmaListener.lookupTransform("/map", "/odom",
+                                        ros::Time(0), map2odomTransform);                        
+            }
+                catch (tf::TransformException &ex) {
+                ROS_ERROR("%s",ex.what());
+                ros::Duration(1.0).sleep();
+                return;
+             }
+        
+            //for now simple one face
+            int facesQuantity = 0;
+
+            //ROS_WARN_STREAM("FACE CALLBACK\n");
+
+            try
+            {
+                facesQuantity = static_cast<int>(sizeof(input->points) / sizeof((input->points[0])));
+                //ROS_WARN_STREAM("faces " + boost::lexical_cast<std::string>(facesQuantity));
+            }
+            catch(...) { }
+
+            //nie wiem czemu ale w ostatnim elemenie jest jakis smiec, co nie jest zgodne z rostopic echo
+            for(int i = 0; i < facesQuantity - 1; i++)
+            {
+                //ROS_WARN_STREAM("POINT " + boost::lexical_cast<std::string>(i) + " " + boost::lexical_cast<std::string>(input->points[i].x)+ " " + boost::lexical_cast<std::string>(input->points[i].y) + " " + boost::lexical_cast<std::string>(input->points[i].z));
+                tf::Vector3 pointCamera(input->points[i].x, input->points[i].y, input->points[i].z);
+                tf::Vector3 pointTransformed = map2odomTransform * (odom2omnivelmaTransform * (omnivelma2cameraTransform * pointCamera));
+                Vector2Stamped newPoint = Vector2Stamped(pointTransformed.getX(), pointTransformed.getY());
+            
+                if(faces.size() == 0)
+                {
+                    faces.push_back(newPoint);
+                    HumanFacingArea humanFacingArea(newPoint.humanId);
+                    facingAreas.push_back(humanFacingArea);
+                }
+                else
+                {
+                    //check if point exists
+                    bool exists = false;
+                    for(std::vector<Vector2Stamped>::iterator iter = faces.begin(); iter != faces.end(); iter++)
+                    {
+                        if(sqrt(pow(((*iter).x - newPoint.x),2) + pow(((*iter).y - newPoint.y), 2)) < pointMinDiff)
+                        {
+                            (*iter).lastSeen = ros::Time::now();
+                            exists = true;
+                            break;
+                        }  
+                    }
+
+                    //point not exists, simply add
+                    if(exists == false)
+                    {
+                        faces.push_back(newPoint);
+                        HumanFacingArea humanFacingArea(newPoint.humanId);
+                        facingAreas.push_back(humanFacingArea);
+                    }
+                }
+            }   
+        }
+
+        ros::Duration(0.02).sleep();
+    }
+
+    void HumanLayer::matchSize()
+    {
+        resizeMap(master->getSizeInCellsX(), master->getSizeInCellsY(), master->getResolution(), master->getOriginX(), master->getOriginY());
+    }
+
+    //just to fast enable/disable layer
+    void HumanLayer::reconfigureCB(costmap_2d::GenericPluginConfig & config, uint32_t level)
+    {
+        enabled_ = config.enabled;
+    }
+
+    //void OnFaceMessage(const )
+    
+    /*The updateBounds method does not change the costmap just yet. 
+    It just defines the area that will need to be updated. 
+    We calculate the point we want to change (mark_x_, mark_y_) 
+    and then expand the min/max bounds to be sure it includes the new point.*/
+    void HumanLayer::updateBounds(double robot_x, double robot_y, double robot_yaw, double * min_x, double * min_y, double * max_x, double* max_y)
+    {
+        //ROS_WARN_STREAM("FACES " + boost::lexical_cast<std::string>(faces.size()));
+        {
+            std::lock_guard<std::mutex> lock(mutex);
+
+            if(!enabled_)
+                return;
+
+            if(faces.size() == 0)
+                return;
+
+            //updateOrigin(master->getOriginX(), master->getOriginY());
+
+            unsigned int mx;
+            unsigned int my;
+
+            double mark_x;
+            double mark_y;
+            int id;
+
+            for(std::vector<Vector2Stamped>::iterator iter = faces.begin(); iter != faces.end();)
+            {
+                mark_x = (*iter).x;
+                mark_y = (*iter).y;
+                id = (*iter).humanId;
+
+                //this part is obviously CPU demand, but the vectors will be surely short (<4 I believe), so there is no a serious problem
+                for(std::vector<HumanFacingArea>::iterator areaIter = facingAreas.begin(); areaIter != facingAreas.end(); areaIter++)
+                {
+                    if((*iter).humanId != (*areaIter).humanId)
+                        continue;
+
+                    //else the facing is already set
+                    if((*areaIter).facing.x == std::numeric_limits<float>::min())
+                    {
+                        Vector2 newFacing = Vector2(robot_x - (*iter).x, robot_y - (*iter).y);
+                        (*areaIter).facing.x = newFacing.x;
+                        (*areaIter).facing.y = newFacing.y;
+                        break;
+                    }
+                }
+
+                if((ros::Time::now() - (*iter).lastSeen).toSec() > pointLifetime)
+                {
+                    deleteHumanCost(mark_x, mark_y, min_x, min_y, max_x, max_y);                 
+
+                    // I <3 c++
+                    iter = faces.erase(iter);
+                    continue;
+                }  
+              
+                setHumanCost(id, mark_x, mark_y, min_x, min_y, max_x, max_y);
+ 
+                iter++;
+            }           
+        }
+        ros::Duration(0.02).sleep();
+    }
+
+    void HumanLayer::setHumanCost(int id, double mark_x, double mark_y, double * min_x, double * min_y, double * max_x, double* max_y)
+    {
+        //circle
+        for(double r = distanceStep; r <= humanLayerRadius; r += distanceStep)
+        {
+            //ROS_FATAL_STREAM("R: " + boost::lexical_cast<std::string>(r));
+
+            for(double angle = 0.0; angle < 2*M_PI; angle += radiusStep)
+            { 
+                double x = mark_x + cos(angle) * r;
+                double y = mark_y + sin(angle) * r;
+
+                setCalculatedCost(x, y, min_x, min_y, max_x, max_y, 254);   
+            }  
+        }
+    }
+
+    void HumanLayer::deleteHumanCost(double mark_x, double mark_y, double * min_x, double * min_y, double * max_x, double* max_y)
+    {
+        //circle
+        for(double r = distanceStep; r <= humanLayerRadius; r += distanceStep)
+        {
+            //ROS_FATAL_STREAM("R: " + boost::lexical_cast<std::string>(r));
+
+            for(double angle = 0.0; angle < 2*M_PI; angle += radiusStep)
+            { 
+                double x = mark_x + cos(angle) * r;
+                double y = mark_y + sin(angle) * r;
+
+                setCalculatedCost(x, y, min_x, min_y, max_x, max_y, 0);   
+            }  
+        }
+    }
+
+    void HumanLayer::setCalculatedCost(double mark_x, double mark_y, double * min_x, double * min_y, double * max_x, double* max_y, int cost)
+    {
+        unsigned int mx;
+        unsigned int my;
+
+        if(worldToMap(mark_x, mark_y, mx, my))
+        {
+            setCost(mx, my, cost);     
+        }
+
+        *min_x = std::min(*min_x, mark_x);
+        *min_y = std::min(*min_y, mark_y);
+        *max_x = std::max(*max_x, mark_x);
+        *max_y = std::max(*max_y, mark_y);
+    }
+
+    void HumanLayer::updateCosts(costmap_2d::Costmap2D & master_grid, int min_i, int min_j, int max_i, int max_j)
+    {
+        if(!enabled_)
+            return;
+
+        for(int j = min_j; j < max_j; j++)
+        {
+            for(int i = min_i; i < max_i; i++)
+            {
+                int index = getIndex(i,j);
+                if (costmap_[index] == NO_INFORMATION)
+                continue;
+
+                master_grid.setCost(i, j, costmap_[index]);
+            }
+        }
+    }
+}
+

@@ -1,0 +1,1 @@
+Kinect wprowadzony do symulacji - względem oryginalnego kinecta różni się rozdzielczością obrazu oraz kątem widzenia.

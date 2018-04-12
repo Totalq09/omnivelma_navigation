@@ -1,0 +1,1 @@
+Paczka zawiera narzędzia potrzebne do kompilacji niektórych modółów

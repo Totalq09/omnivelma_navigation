@@ -1,0 +1,7 @@
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.browse.VC.db
+src/omnivelma_navigation/~/.vscode-root/User/workspaceStorage/520728e39917044167548c8242b5f65b/ms-vscode.cpptools/.browse.VC.db

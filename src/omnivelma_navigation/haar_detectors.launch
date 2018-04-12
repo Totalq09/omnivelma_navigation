@@ -1,0 +1,53 @@
+<launch>
+
+  <!--  Upperbody  -->
+
+  <include file="$(find face_detector)/launch/face_detector.rgbd.launch" >
+    <arg name="paramfile_classifier" value="$(find face_detector)/param/classifier_upperbody.yaml" />
+    <arg name="cloud_publisher_topic" value="face_detector/faces_cloud_upperbody" />
+    <arg name="nodename" value="upperbodydetector"/>
+    <arg name="classifier_name" value="upperbodydetector"/>
+    <arg name="face_size_min_m" value="0.3"/>
+    <arg name="face_size_max_m" value="1.0"/>
+    <arg name="scale" value="1.2"/>
+  </include>
+
+ <!--   Profile face   -->
+
+  <include file="$(find face_detector)/launch/face_detector.rgbd.launch" >
+    <arg name="paramfile_classifier" value="$(find face_detector)/param/classifier_profileface.yaml" />
+    <arg name="cloud_publisher_topic" value="face_detector/faces_cloud_profileface" />
+    <arg name="nodename" value="profilefacedetector"/>
+    <arg name="classifier_name" value="profilefacedetector"/>
+    <arg name="face_size_min_m" value="0.1"/>
+    <arg name="face_size_max_m" value="0.45"/>
+    <arg name="scale" value="1.5"/>
+  </include>
+
+  <!--   Frontal face   -->
+
+  <include file="$(find face_detector)/launch/face_detector.rgbd.launch" >
+    <arg name="paramfile_classifier" value="$(find face_detector)/param/classifier_frontalface.yaml" />
+    <arg name="cloud_publisher_topic" value="face_detector/faces_cloud_frontalface" />
+    <arg name="nodename" value="frontalfacedetector"/>
+    <arg name="classifier_name" value="frontalfacedetector"/>
+    <arg name="face_size_min_m" value="0.1"/>
+    <arg name="face_size_max_m" value="0.45"/>
+    <arg name="scale" value="1.4"/>
+  </include>
+
+  <!--    Nose    -->
+
+  <include file="$(find face_detector)/launch/face_detector.rgbd.launch" >
+    <arg name="paramfile_classifier" value="$(find face_detector)/param/classifier_nose.yaml" />
+    <arg name="cloud_publisher_topic" value="face_detector/faces_cloud_nose" />
+    <arg name="nodename" value="nosedetector"/>
+    <arg name="classifier_name" value="nosedetector"/>
+    <arg name="face_size_min_m" value="0.005"/>
+    <arg name="face_size_max_m" value="0.15"/>
+    <arg name="scale" value="1.05"/>
+  </include>
+
+  <node pkg="omnivelma_navigation" name="calculate_human_angle" type="calculate_human_angle" output="screen" />
+
+</launch>

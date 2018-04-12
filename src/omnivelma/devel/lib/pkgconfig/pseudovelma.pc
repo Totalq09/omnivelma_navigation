@@ -1,0 +1,8 @@
+prefix=/home/pwalas1/catkin_pw/src/omnivelma/devel
+
+Name: pseudovelma
+Description: Description of pseudovelma
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/pwalas1/catkin_pw/src/omnivelma/devel/lib 
+Requires: gazebo_ros roscpp omnivelma_msgs geometry_msgs nav_msgs

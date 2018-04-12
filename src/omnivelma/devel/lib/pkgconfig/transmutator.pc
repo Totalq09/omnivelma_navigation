@@ -1,0 +1,8 @@
+prefix=/home/pwalas1/catkin_pw/src/omnivelma/devel
+
+Name: transmutator
+Description: Description of transmutator
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/pwalas1/catkin_pw/src/omnivelma/devel/lib 
+Requires: geometry_msgs roscpp omnivelma_msgs

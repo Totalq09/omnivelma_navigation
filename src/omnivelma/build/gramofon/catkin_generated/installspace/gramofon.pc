@@ -1,0 +1,8 @@
+prefix=/home/pwalas1/catkin_pw/src/omnivelma/install
+
+Name: gramofon
+Description: Description of gramofon
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/pwalas1/catkin_pw/src/omnivelma/install/lib 
+Requires: roscpp geometry_msgs

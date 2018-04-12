@@ -1,0 +1,1 @@
+Wrapper do opencv3 - pozwala na kompilacje całej paczki people - więcej info w paczce people 

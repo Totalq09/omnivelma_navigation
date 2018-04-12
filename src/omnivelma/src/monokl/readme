@@ -1,0 +1,11 @@
+Monokl - czujnik laserowy LiDAR SICK LMS100-1000
+
+Komunikacja programu w formie:
+nazwa
+typ
+opis
+
+/monokl_r/scan monokl_l/scan
+sensor_msgs/LaserScan
+Dane skanowania prawego, lub lewego czujnika
+

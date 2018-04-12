@@ -1,0 +1,8 @@
+prefix=/home/pwalas1/catkin_pw/src/omnivelma/install
+
+Name: velmaverse
+Description: Description of velmaverse
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/pwalas1/catkin_pw/src/omnivelma/install/lib 
+Requires: 

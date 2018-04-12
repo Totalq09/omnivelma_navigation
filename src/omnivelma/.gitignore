@@ -1,0 +1,11 @@
+*.aux
+*.log
+*.out
+*.toc
+*.nav
+*.snm
+*.backup
+ros/build/
+ros/devel/
+ros/.catkin_workspace
+ros/src/CMakeLists.txt

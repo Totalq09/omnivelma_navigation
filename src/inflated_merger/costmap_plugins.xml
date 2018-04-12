@@ -1,0 +1,5 @@
+<library path="lib/libinflated_merger">
+  <class type="inflated_merger::InflatedMerger" base_class_type="costmap_2d::Layer">
+    <description>Merging inflated area closed to each other</description>
+  </class>
+</library>

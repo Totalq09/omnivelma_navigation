@@ -1,0 +1,8 @@
+prefix=/home/pwalas1/catkin_pw/src/omnivelma/devel
+
+Name: human
+Description: Description of human
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/pwalas1/catkin_pw/src/omnivelma/devel/lib 
+Requires: geometry_msgs gazebo_ros roscpp nav_msgs std_msgs tf2_ros tf

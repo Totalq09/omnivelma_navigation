@@ -1,0 +1,24 @@
+Transmutator - Zamiana kierunku na prędkości kół. Model kinematyki odwrotnej.
+Użycie: transmutator [-r OBRÓT] TOPIC
+Transmutacja (z obrotem) geometry_msgs/Twist na omnivelma/Vels i wysłanie do TOPIC.
+geometry_msgs/Twist jest generowane przez moduł RQT, oraz pr2_teleop, można używać różnorodnych urządzeń sterujących.
+
+Przyjmuje opcjonalnie argument -r z wartością: 0, 90, 180, 270.
+To oznacza, ile stopni w lewo obrócić wejście typu geometry_msgs/Twist.
+Przydatne, jeśli program do sterowania robota ma inaczej zdefiniowany przód, niż Omnivelma.
+Na przykład sterowanie RobotSteering z RQT, albo rp2_teleop zakłada, że przód jest w kierunku X+, a Omnivelma ma przód w kierunku Y+.
+Należy uruchomić więc Transmutator z argumentami '-r 90', żeby łatwo z nich sterować Omnivelmą.
+
+Komunikacja programu w formie:
+nazwa
+typ
+opis
+
+TOPIC
+omnivelma_msgs/Vels
+Zwraca prędkości kół do powyższych rostopic.
+
+/transmutator/twist
+geometry_msgs/Twist
+Przyjmuje wiadomości twist z dowolnego innego modułu i opcjonalnie obraca przed zamianą.
+

@@ -1,0 +1,53 @@
+<launch>
+  <master auto="start"/>
+  <param name="/use_sim_time" value="true"/>
+
+  <node pkg="omnivelma_navigation" name="omnivelma_speed_broadcaster" type="omnivelma_speed_broadcaster" output="screen">
+    <param name="cmd_receive_topic" value="cmd_vel" />
+    <param name="cmd_send_topic" value="omnivelma/vels" />
+    <param name="rotation" type="str" value="90" />
+  </node>
+  
+  <arg name="map_file" default="/home/pwalas1/catkin_pw/src/omnivelma_navigation/maps/lab_map.yaml"/>
+  
+  <!-- Run the map server -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" >
+    <param name="frame_id" value="odom" />
+  </node>
+
+  <node pkg="omnivelma_navigation" name="camera_tf_broadcaster" type="camera_tf_broadcaster" />
+  <node pkg="omnivelma_navigation" name="laser_tf_broadcaster" type="laser_tf_broadcaster" />
+  <!--<node pkg="omnivelma_navigation" name="omnivelma_tf_broadcaster" type="omnivelma_tf_broadcaster" />-->
+
+  <include file="$(find ira_laser_tools)/launch/laserscan_multi_merger.launch" />
+
+ <!--<node pkg="gmapping" name="slam_gmapping" type="slam_gmapping" args="scan:=/scan _base_frame:=omnivelma">
+    <param name="map_udpate_interval" value="5.0"/>
+  </node>-->
+
+  <include file="$(find amcl)/examples/amcl_omni.launch" />
+
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen"  >
+    <rosparam file="$(find omnivelma_navigation)/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find omnivelma_navigation)/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find omnivelma_navigation)/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find omnivelma_navigation)/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find omnivelma_navigation)/base_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find omnivelma_navigation)/move_base_params.yaml" command="load" />
+
+    <param name="base_global_planner" value="global_planner/GlobalPlanner" />
+    <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS"/>
+    <!--<param name="base_local_planner" value="eband_local_planner/EBandPlannerROS"/>-->
+    <!--<param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />-->
+  </node>
+
+  <node pkg="human_obstacle" type="people_merger" name="people_merger" output="screen"/>
+ 
+  <include file="$(find people_velocity_tracker)/launch/tracked_detector.launch">
+  </include>
+
+  <node pkg="omnivelma_navigation" type="kinect_follower" name="kinect_follower" output="screen" />
+
+  <!--<node pkg="omnivelma_navigation" name="main_controller" type="main_controller" output="screen"/>-->
+
+</launch>

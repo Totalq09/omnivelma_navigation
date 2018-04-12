@@ -1,0 +1,2 @@
+Human Mover umożliwia poruszanie się człowiekiem w sumulacji patrząc z jego perspektywy. 
+Sterowanie odbywa się za pomocą strzałek na klawiaturze. Prędkość człowieka kontrolowana jest poprzez klawisze +/-

@@ -1,0 +1,8 @@
+prefix=/home/pwalas1/catkin_pw/src/omnivelma/devel
+
+Name: ocznica
+Description: Description of ocznica
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/pwalas1/catkin_pw/src/omnivelma/devel/lib 
+Requires: omnivelma_msgs gazebo_ros roscpp

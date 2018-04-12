@@ -1,0 +1,4 @@
+<launch>
+	  <master auto="start"/>
+	  <node name="gazebo" type="gazebo" pkg="omnivelma_navigation" />
+</launch>

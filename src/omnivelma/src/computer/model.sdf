@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="computer">
+  	<static>1</static>
+    <link name="computer_base">
+      <inertial>
+        <mass>1.0</mass>
+      </inertial>
+      <visual name="visual">
+        <cast_shadows>0</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://computer/meshes/computer.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

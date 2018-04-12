@@ -1,0 +1,32 @@
+Pseudovelma - platforma kinematyczna
+
+Komunikacja programu w formie:
+nazwa
+typ
+opis
+
+/pseudovelma/vels
+omnivelma_msgs/Vels
+Przyjmuje prędkości kół w kolejności:
+przednie prawe
+przednie lewe
+tylne lewe
+tylne prawe
+Wysłanie NaN zachowuje poprzednią prędkość koła.
+
+/pseudovelma/pose
+geometry_msgs/PoseStamped
+Zwraca aktualną pozycję
+
+/pseudovelma/twist
+geometry_msgs/TwistStamped
+Zwraca aktualną prędkość
+
+/pseudovelma/odometry
+nav_msgs/Odometry
+Wiadomość zawierająca obie powyższe wiadomości
+
+Ramki:
+map                         Środek układu współrzędnych, środek mapy w (0,0,0)
+pseudovelma                 Środek platformy kinematycznej
+map → pseudovelma           Nadawane przez pseudovelma.cpp

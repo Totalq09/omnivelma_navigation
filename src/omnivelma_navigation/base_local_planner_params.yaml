@@ -1,0 +1,158 @@
+NavfnROS:
+  track_unknown_space: true
+  allow_unknown: true
+  visualize_potential: true
+
+GlobalPlanner:
+  default_tolerance: 0.1
+  visualize_potential: false
+  use_dijkstra: true
+  use_quadratic: false
+  use_grid_path: false
+
+  lethal_cost: 254
+  neutral_cost: 25
+  cost_factor: 0.7
+
+DWAPlannerROS:
+  acc_lim_x: 1.0
+  acc_lim_y: 1.0
+  acc_lim_th: 1.0
+  max_trans_vel: 1.0
+  min_trans_vel: 0.1
+  max_vel_x: 0.25
+  min_vel_x: -0.25
+  max_vel_y: 0.25
+  min_vel_y: -0.25
+  max_rot_vel: 0.5
+  min_rot_vel: 0.1
+
+  yaw_goal_tolerance: 0.3
+  xy_goal_tolerance: 0.3
+  latch_xy_goal_tolerance: False
+
+  occdist_scale: 0.01
+  #twirling_scale odpowiada za ostrosc lukow - niestety zwiekszenie tego parametru powoduje 
+  #ze robot nie radzi sobie pokonywaniem waskich przejsc (nie potrafi wygenerowac odpowiedniego łuku)
+  #twirling_scale: 1.0
+  path_distance_bias: 96.0
+  goal_distance_bias: 20.0
+  stop_time_buffer: 0.1
+  oscillation_reset_dist: 0.2
+  forward_point_distance: 0.4
+  prune_plan: true
+
+  vx_samples: 15
+  vy_samples: 15
+  vth_samples: 30
+  sim_granularity: 0.02
+  angular_sim_granularity: 0.025
+  sim_time: 1.9
+
+#REST OF THE PARAMETERS ARE DEDICATED TO OTHER PLANNERS
+#NOT CONFIGURED PROPERLY YET!
+
+TebLocalPlannerROS:
+   
+ # Trajectory
+  
+  teb_autosize: True
+  dt_ref: 0.3
+  dt_hysteresis: 0.1
+  global_plan_overwrite_orientation: True
+  allow_init_with_backwards_motion: False
+  max_global_plan_lookahead_dist: 2.5
+  feasibility_check_no_poses: 5
+  odom_topic: "odom"
+  map_frame: "map"
+    
+ # Robot
+         
+  max_vel_x: 0.4
+  max_vel_x_backwards: 0.4
+  max_vel_y: 0.4
+  max_vel_theta: 0.5
+  acc_lim_x: 1.0
+  acc_lim_y: 1.0
+  acc_lim_theta: 1.0
+  min_turning_radius: 0.0 # omni-drive robot (can turn on place!)
+
+  footprint_model:
+    type: "polygon"
+    vertices: [ [0.38, 0.38], [-0.38, 0.38], [-0.38, -0.38], [0.38, -0.38] ]
+
+ # GoalTolerance
+    
+  xy_goal_tolerance: 0.2
+  yaw_goal_tolerance: 0.15
+  free_goal_vel: False
+    
+ # Obstacles
+    
+  min_obstacle_dist: 0.5 # This value must also include our robot radius, since footprint_model is set to "point".
+  include_costmap_obstacles: True
+  costmap_obstacles_behind_robot_dist: 1.0
+  obstacle_poses_affected: 30
+
+ # Optimization
+    
+  no_inner_iterations: 7
+  no_outer_iterations: 7
+  #optimization_activate: True
+  optimization_verbose: False
+  penalty_epsilon: 0.1
+  weight_max_vel_x: 1.0
+  weight_max_vel_y: 1.0
+  weight_max_vel_theta: 1.0
+  weight_acc_lim_x: 1.0
+  weight_acc_lim_y: 1.0
+  #weight_acc_lim_theta: 1.0
+  weight_kinematics_nh: 1 # WE HAVE A HOLONOMIC ROBOT, JUST ADD A SMALL PENALTY
+  weight_kinematics_forward_drive: 3.0
+  weight_kinematics_turning_radius: 3.0
+  weight_optimaltime: 1
+  weight_obstacle: 50.0
+
+ # Homotopy Class Planner
+
+  enable_homotopy_class_planning: True
+  enable_multithreading: True
+  simple_exploration: False
+  max_number_classes: 4
+  selection_cost_hysteresis: 1.0
+  selection_obst_cost_scale: 1.0
+  selection_alternative_time_cost: False
+ 
+  roadmap_graph_no_samples: 15
+  roadmap_graph_area_width: 6
+  h_signature_prescaler: 0.5
+  h_signature_threshold: 0.1
+  obstacle_keypoint_offset: 0.1
+  obstacle_heading_threshold: 1.0
+  visualize_hc_graph: False
+
+#EBandPlannerROS:
+
+#Common Parameters
+ # xy_goal_tolerance: 0.3
+ # yaw_goal_tolerance: 0.2
+ # rot_stopped_vel: 0.01
+ # trans_stopped_vel: 0.01
+
+#Trajectory Controller Parameters
+  #max_vel_lin: 0.25
+ # max_vel_th: 0.5
+ # min_vel_lin: -0.25
+  #min_vel_th: -0.5
+ # max_acceleration: 0.5
+ # max_translational_acceleration: 1.0
+  #max_rotational_acceleration: 1.0
+ # rotation_correction_threshold: 0.25
+ # differential_drive: False
+  #bubble_velocity_multiplier: 2.0
+  #virtual_mass: 0.75
+
+  #PID
+  #k_prop: 4.5
+  #k_damp: 8.0
+ # Ctrl_Rate: 20.0

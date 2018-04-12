@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -O2 -g -DNDEBUG  -shared -Wl,-soname,libgtest.so -o /root/catkin_ws/src/stage_controllers/lib/libgtest.so CMakeFiles/gtest.dir/src/gtest-all.cc.o  -L/opt/ros/lunar/lib  -L/root/catkin_ws/src/stage_controllers/build/gtest/src -lpthread -Wl,-rpath,/opt/ros/lunar/lib:/root/catkin_ws/src/stage_controllers/build/gtest/src 

@@ -1,0 +1,13 @@
+<class_libraries>
+  <library path="lib/libhuman_layer">
+    <class type="human_layer::HumanLayer" base_class_type="costmap_2d::Layer">
+      <description>Detect human and create some kind of safe zone (tear like shape) on costmap2d</description>
+    </class>
+  </library>
+  <library path="lib/libobstacle_with_human_layer">
+    <class type="human_layer::ObstacleWithHumanLayer" base_class_type="costmap_2d::Layer">
+      <description>Detect human and add/delete from costmap</description>
+    </class>
+  </library>
+</class_libraries>
+

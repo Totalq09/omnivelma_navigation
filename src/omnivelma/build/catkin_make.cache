@@ -1,0 +1,2 @@
+dziadzio:flooria:gramofon:human:lalkarz:monokl:ocznica:omnivelma:omnivelma_msgs:pantofelek:pseudovelma:transmutator:velmaverse:wewucho:widelnica
+-DCATKIN_DEVEL_PREFIX=/home/pwalas1/catkin_pw/src/omnivelma/devel -DCMAKE_INSTALL_PREFIX=/home/pwalas1/catkin_pw/src/omnivelma/install -G Unix Makefiles

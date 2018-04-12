@@ -1,0 +1,8 @@
+prefix=/home/pwalas1/catkin_pw/src/omnivelma/devel
+
+Name: monokl
+Description: Description of monokl
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/pwalas1/catkin_pw/src/omnivelma/devel/lib 
+Requires: gazebo_ros roscpp sensor_msgs

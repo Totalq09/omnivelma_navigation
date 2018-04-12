@@ -1,0 +1,88 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+	<model name="human">
+
+		<plugin name="human" filename="libhuman.so"/>
+
+		<link name="body">
+			<gravity>0</gravity>
+			<kinematic>1</kinematic>
+			<inertial>
+				<pose>0 0 1.0 0 0 0</pose>
+				<mass>80.0</mass>
+				<inertia>
+					<ixx>25.0</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>25.0</iyy>
+					<iyz>0</iyz>
+					<izz>2.5</izz>
+				</inertia>
+			</inertial>
+
+			<collision name="collider">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://human/meshes/rumcajs.dae</uri>
+					</mesh>
+				</geometry>
+			</collision>
+
+			<visual name="visual">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<uri>model://human/meshes/rumcajs.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="fps_camera">
+			<pose>0 0 1.6 0 0.3 0</pose>
+			<kinematic>1</kinematic>
+
+			<!--<visual name="visual">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<box>
+						<size>0.4 0.4 0.4</size>
+					</box>
+				</geometry>
+			</visual>-->
+
+			<sensor name="fps_cam" type="camera">
+				<camera name="fps_camera">
+					<!--<horizontal_fov>1.86655555556</horizontal_fov>-->
+					<horizontal_fov>2.0</horizontal_fov>
+					<image>
+						<width>640</width>
+						<height>480</height>
+						<format>R8G8B8</format>
+					</image>
+					<clip>
+						<near>0.3</near>
+						<far>25</far>
+					</clip>
+				</camera>
+				<always_on>1</always_on>
+				<update_rate>60</update_rate>
+				<plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+					<alwaysOn>true</alwaysOn>
+					<updateRate>0.0</updateRate>
+					<cameraName>fps_camera</cameraName>
+					<imageTopicName>image_raw</imageTopicName>
+					<cameraInfoTopicName>camera_info</cameraInfoTopicName>
+					<frameName>human_link</frameName>
+					<hackBaseline>0.07</hackBaseline>
+					<distortionK1>0.0</distortionK1>
+					<distortionK2>0.0</distortionK2>
+					<distortionK3>0.0</distortionK3>
+					<distortionT1>0.0</distortionT1>
+					<distortionT2>0.0</distortionT2>
+				</plugin>
+			</sensor>
+		</link>
+	</model>
+</sdf>
+	

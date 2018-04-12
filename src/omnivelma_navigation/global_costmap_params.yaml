@@ -1,0 +1,26 @@
+global_costmap:
+  global_frame: map
+  robot_base_frame: omnivelma
+  update_frequency: 1.0
+  publish_frequency: 4.0
+  transform_tolerance: 0.5
+  width: 15.0
+  height: 9.0
+  origin_x: -7.5
+  origin_y: -3.0
+  static_map: true
+  resolution: 0.04
+
+  plugins: 
+    - {name: static,          type: "costmap_2d::StaticLayer"}            
+    #Can disable sensor layer if gmapping is fast enough to update scans
+    - {name: sensor,          type: "human_layer::ObstacleWithHumanLayer"}
+    - {name: social,           type: "social_navigation_layers::ProxemicLayer"}
+    #- {name: human_layer,      type: "human_layer::HumanLayer"}
+    - {name: inflation,       type: "costmap_2d::InflationLayer"}
+    #- {name: merger,          type: "inflated_merger::InflatedMerger"}
+
+  inflation:
+    #cost_scaling_factor: 1.8
+    cost_scaling_factor: 8.0
+    inflation_radius: 1.7
