@@ -2,7 +2,7 @@
 </h2
 <h2>
 Pierwotny model symulatora został przygotowany przez Radosława Swiątkiewicza:</h2>
-<a href="https://github.com/Antyradek/omnivelma">repo</a><br />
+<a href="https://github.com/Antyradek/omnivelma">repo</a><br /><br/ >
 
 <p>
 W dalszym zakresie prac przygotowano model MS Kinect, moduł nawigacyjny (amcl, gmapping, costmapy, planery, kontroler bazy) oraz detektory (nóg oraz części głowy).
@@ -21,14 +21,21 @@ Obszerną dokumentację można znaleźć w katalogu src/doc
 
 <p align="center">
   <img src="https://github.com/Totalq09/omnivelma_navigation/blob/master/src/doc/q1.PNG?raw=true"/>
+</p>
   <br />
   <hr />
+  <p align="center">
    <img src="https://github.com/Totalq09/omnivelma_navigation/blob/master/src/doc/q2.PNG?raw=true"/>
+  </p>
   <br />
   <hr />
-    <img src="https://github.com/Totalq09/omnivelma_navigation/blob/master/src/doc/q3.PNG?raw=true" />
+  <p align="center">
+    <img src="https://github.com/Totalq09/omnivelma_navigation/blob/master/src/doc/q3.PNG?raw=true"/>
+  </p>
   <br />
   <hr />
-   <img src="https://github.com/Totalq09/omnivelma_navigation/blob/master/src/doc/q4.PNG?raw=true" align="center"/>
+  <p align="center">
+   <img src="https://github.com/Totalq09/omnivelma_navigation/blob/master/src/doc/q4.PNG?raw=true"/>
+  </p>
   <br />
 </p>
