@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.16)  18 APR 2018 01:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.16)  18 APR 2018 01:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -908,13 +908,13 @@ File: gfx/882px-Personal_Space.png Graphic file (type png)
 
 <use gfx/882px-Personal_Space.png>
 Package pdftex.def Info: gfx/882px-Personal_Space.png used on input line 26.
-(pdftex.def)             Requested size: 212.41261pt x 208.79817pt.
+(pdftex.def)             Requested size: 259.6186pt x 255.2081pt.
 
 <gfx/cost_zone.png, id=357, 583.17876pt x 173.64874pt>
 File: gfx/cost_zone.png Graphic file (type png)
  <use gfx/cost_zone.png>
 Package pdftex.def Info: gfx/cost_zone.png used on input line 35.
-(pdftex.def)             Requested size: 330.42041pt x 98.38992pt.
+(pdftex.def)             Requested size: 354.02342pt x 105.41684pt.
 
 [8 <./gfx/882px-Personal_Space.png>]
 <gfx/taksonomia_planery.png, id=371, 1214.5375pt x 592.2125pt>
@@ -1052,7 +1052,7 @@ r/share/texlive/texmf-dist/fonts/type1/public/pl/plssi12.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/pl/plsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /pl/pltt12.pfb>
-Output written on main.pdf (20 pages, 7812300 bytes).
+Output written on main.pdf (20 pages, 7812304 bytes).
 PDF statistics:
  575 PDF objects out of 1000 (max. 8388607)
  504 compressed objects within 6 object streams
