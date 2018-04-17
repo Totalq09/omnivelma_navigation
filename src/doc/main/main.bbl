@@ -1,0 +1,59 @@
+\begin{thebibliography}{10}
+
+\bibitem{survey}
+T.~Kruse, A.~K. Pandey, R.~Alami, and A.~Kirsch, ``Human-aware robot
+  navigation: A survey,'' {\em Robotics and Autonomous Systems}, vol.~61,
+  pp.~1726--1743, 2013.
+
+\bibitem{dimension}
+E.~T. Hall, {\em The Hidden Dimension}.
+\newblock Anchor Books, 1966.
+
+\bibitem{dimension_zones}
+``E. t. hall – proxemics /personal space in different cultures {@ONLINE}.''
+  \url{https://laofutze.wordpress.com/category/e-t-hall-2/}.
+
+\bibitem{nrs}
+A.~Mateus", ``Human-aware navigation in networked robot systems.''
+\newblock Instituto Superior Tecnico.
+
+\bibitem{survey_2}
+P.~Althaus, H.~Ishiguro, and T.~M. nad H.~Christensen", ``Navigation for
+  human–robot interaction tasks,'' {\em ICRA IEEE}, 2004.
+
+\bibitem{taxonomy}
+T.~Weerakoon, K.~Ishii, and A.~A.~F. Nassiraei, ``An artificial potential field
+  based mobilee robot navigation method to prevent from deadlock,'' {\em
+  JAISCR}, vol.~5, no.~3, pp.~189--203, 2015.
+
+\bibitem{planer_1}
+Y.~K. Hwang and N.~Ahuja, ``Gross motion planning: a survey,'' {\em ACM
+  Computing Surveys (CSUR)}, vol.~24, no.~3, pp.~219--291, 1992.
+
+\bibitem{planer_2}
+P.~K. Mohanty and D.~R. Parhi, ``Controlling the mo- tion of an autonomous
+  mobile robot using various techniques: a review,'' {\em Journal of Advance
+  Me- chanical Engineering}, vol.~1, no.~1, pp.~24--39, 2013.
+
+\bibitem{ma}
+E.~A. Sisbot, L.~F. Marin-Urias, R.~Alami, and T.~Siméon, ``A human aware
+  mobile robot motion planner,'' {\em IEEE TRANSACTIONS ON ROBOTICS}, vol.~23,
+  no.~5, 2007.
+
+\bibitem{omnivelma}
+R.~Świątkiewicz, ``Symulacja dookólnej bazy mobilnej,'' 2018.
+
+\bibitem{kinect}
+Microsoft, ``Kinect for windows sensor components and specifications.''
+  \url{https://msdn.microsoft.com/en-us/library/jj131033.aspx}.
+
+\bibitem{kinect_openkinect}
+OpenKinect, ``Openkinect protocol documentation.''
+  \url{https://openkinect.org/wiki/Protocol_Documentation#Control_Commands;a=summary}.
+
+\bibitem{lidar}
+H.~E., ``3d laser scanning for heritage. advice and guidance to users on laser
+  scanning in archaeology and architecture.''
+  \url{www.english-heritage.org.uk}.
+
+\end{thebibliography}
