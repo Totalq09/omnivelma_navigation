@@ -3,11 +3,16 @@
 \contentsline {section}{\numberline {1.1}Motywacje}{4}{section.1.1}
 \contentsline {section}{\numberline {1.2}Cel pracy}{5}{section.1.2}
 \contentsline {section}{\numberline {1.3}Za\IeC {\l }o\IeC {\.z}enia}{6}{section.1.3}
-\contentsline {chapter}{\numberline {2}Przegl\IeC {\k a}d wiedzy}{7}{chapter.2}
-\contentsline {section}{\numberline {2.1}Dotychczasowe dokonania}{7}{section.2.1}
-\contentsline {chapter}{\numberline {3}Opis bazy mobilnej}{12}{chapter.3}
-\contentsline {section}{\numberline {3.1}Efektory}{12}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Dook\IeC {\'o}lna baza jezdna}{12}{subsection.3.1.1}
-\contentsline {section}{\numberline {3.2}Receptory}{14}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Kinect}{14}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}LIDAR}{16}{subsection.3.2.2}
+\contentsline {chapter}{\numberline {2}Nawigacja robot\IeC {\'o}w w obecno\IeC {\'s}ci ludzi}{7}{chapter.2}
+\contentsline {chapter}{\numberline {3}Opis bazy mobilnej}{13}{chapter.3}
+\contentsline {section}{\numberline {3.1}Dook\IeC {\'o}lna baza jezdna}{13}{section.3.1}
+\contentsline {section}{\numberline {3.2}Czujniki}{15}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Kinect}{15}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}LIDAR}{17}{subsection.3.2.2}
+\contentsline {chapter}{\numberline {4}Zastosowane oprogramowanie}{20}{chapter.4}
+\contentsline {section}{\numberline {4.1}Robot Operating System}{20}{section.4.1}
+\contentsline {section}{\numberline {4.2}Gazebo}{21}{section.4.2}
+\contentsline {section}{\numberline {4.3}RVIZ}{21}{section.4.3}
+\contentsline {section}{\numberline {4.4}OpenCV}{21}{section.4.4}
+\contentsline {section}{\numberline {4.5}Dlib}{22}{section.4.5}
+\contentsline {section}{\numberline {4.6}Symulator bazy mobilnej}{22}{section.4.6}

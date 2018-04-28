@@ -14,13 +14,20 @@
 \usepackage{url}
 \usepackage{cite}
 \usepackage{float}
+\usepackage{geometry}
+\usepackage{tikz}
+    
 
 \newcommand{\capequation}[1]{\begin{center} #1 \end{center}}
 
 \renewcommand{\familydefault}{\sfdefault}
 
 \begin{document}
+\begin{spacing}{1.15}
+
 \input{start.tex}
+
+\end{spacing}
 
 \begin{spacing}{1.5}
 
@@ -29,6 +36,7 @@
 \input{goal.tex}
 \input{existing.tex}
 \input{hardware.tex}
+\input{software.tex}
 
 \bibliography{bib}{}
 \bibliographystyle{ieeetr}

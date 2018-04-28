@@ -2,41 +2,43 @@
 
 \section{Motywacje}
 
-\indent Zagadnienie budowy robotów działających w środowisku człowieka stało się w ostatnich latach jedną z wiodących gałęzi robotyki. Wraz z rozwojem branży, zarówno pod względem wzrostu mocy obliczeniowej, poprawy motoryki robotów jak i szeroko rozumianego aspektu wizyjnego to, co dawniej pozostawało w sferze prac teoretycznych, dziś może zostać zaimplementowane. Skutkiem tego coraz częściej mowa o robotach, które współpracują z człowiekiem, bądź pracują w jego towarzystwie. Przykładem takich robotów są roboty asystenci, przewodnicy czy roboty mogące wykonywać pracę fizyczne. Niebagatelizowalną kwestią jest starzenie się społeczeństwa, z czym może zmierzyć się robotyka, dostarczając roboty pomagające starszym ludziom zarówno w aspekcie czysto fizycznym, jako ich pomocnicy, ale również w aspekcie społecznym, w rozumieniu walki z samotnością. \\
-\indent Niezależnie od zadań jakie postawią przed nimi ich twórcy, roboty takie muszą mieć zdolność unikania kolizji z człowiekiem. Jest to zagadnienie nieco szersze niż zagadnienie unikania kolizji z innymi przeszkodami, gdyż należy wziąć pod uwagę kwestie bezpieczeństwa ludzi oraz kwestie społecznej akceptowalności ruchu robota. Ważnym jest, aby robot reagował odpowiednio na położenie ludzi, ich orientacje w przestrzeni, przestrzenne rozmieszczenie grupy ludzi, czy inne aspekty wynikające z uwarunkowań kulturowych. Przykładem niech będzie fakt, iż robot nie powinien zbliżać się do ludzi zbyt blisko, poruszać się tuż za ich plecami, czy wykonywać gwałtownych ruchów w ich pobliżu.
+\indent Roboty usługowe i społeczne działają w bezpośrednim otoczeniu człowieka. Ich zadaniem jest wspomaganie ludzi w wykonywanych czynnościach. Przykładem takich robotów są roboty asystenci, przewodnicy, czy roboty mogące wykonywać pracę fizyczne. Istotną kwestią jest również starzenie się społeczeństwa i brak wystarczającej liczby opiekunów. Rozwiązanie problemu może dostarczyć robotyka poprzez stworzenie robotów pomagających ludziom starszym zarówno w aspekcie czysto fizycznym, jako ich pomoc w codziennych czynnościach, ale również w aspekcie społecznym, w rozumieniu robota-towarzysza. \\
+\indent Niezależnie od zadań jakie postawią przed nimi ich twórcy, roboty takie muszą mieć zdolność autonomicznej nawigacji w środowisku człowieka, w szczególności unikania kolizji z człowiekiem. Jest to zagadnienie nieco szersze niż zagadnienie unikania kolizji z innymi przeszkodami, gdyż należy wziąć pod uwagę kwestie bezpieczeństwa ludzi oraz kwestie społecznej akceptowalności ruchu robota. Ważnym jest, aby robot reagował odpowiednio na położenie ludzi, ich orientacje w przestrzeni, przestrzenne rozmieszczenie grupy ludzi, czy inne aspekty wynikające z uwarunkowań kulturowych. Przykładem niech będzie fakt, iż robot nie powinien zbliżać się do ludzi zbyt blisko, poruszać się tuż za ich plecami, czy wykonywać gwałtownych ruchów w ich pobliżu.
 
 \section{Cel pracy}
 
-Celem pracy jest stworzenie całościowego systemu obejmującego nawigacje robota mobilnego, uwzględniającą położenie i orientacje ludzi oraz samą detekcje ludzi w środowisku pracy.\\
-\indent W aspekcie nawigacji istotną część systemu stanowi zdolność do budowy reprezentacji aktualnego środowiska pracy. Reprezentacja ta zawierać powinna informację o lokalizacji robota, występujących przeszkodach oraz o wykrytych osobach. Robot na bazie tych danych powinien generować możliwie optymalną ścieżkę ruchu do punktu zadanego oraz egzekwować ruch robota, poprzez zadawanie odpowiednich prędkości liniowych i kątowych bazy jednej. \\
-\indent Podsystemy detekcji ludzi w środowisku wykrywać będą położenie, rotację oraz prędkość człowieka. Aby zrealizować to zadanie użyte zostaną sensory LIDAR oraz sensor Kinect. Na danych pochodzących z tych czujników operować będą algorytmy detekcji odpowiednio nóg, oraz części głowy osoby. Wykrycie nóg pozwoli na stwierdzenie położenia oraz prędkości danej osoby, natomiast na podstawie aktualnie wykrytych części głowy można estymować kierunek w jaki zwrócona jest twarz człowieka. W efekcie system otrzyma informację o położeniu strefy osobistej człowieka, co z kolei pozwoli na odpowiednią nawigację. \\
+Celem pracy jest opracowanie systemu obejmującego nawigację robota mobilnego, uwzględniającą położenie i orientacje ludzi w środowisku pracy.\\
+\indent W skład systemu wchodzi moduł budowy mapy środowiska pracy robota. Reprezentacja środowiska zawiera informację o lokalizacji robota, występujących przeszkodach, w tym o wykrytych osobach. Robot na bazie tych danych powinien generować możliwie optymalną ścieżkę ruchu do punktu zadanego oraz egzekwować ruch robota, poprzez zadawanie odpowiednich prędkości liniowych i kątowych bazy jednej. \\
+\indent Podsystemy detekcji ludzi w środowisku wykrywać będą położenie, orientację oraz prędkość człowieka. Aby zrealizować to zadanie użyte zostaną skanery laserowe LIDAR oraz czujnik Kinect. Dane pochodzące z czujników są wykorzystywane przez algorytmy detekcji odpowiednio nóg, oraz części głowy osoby. Wykrycie nóg pozwoli na określenie położenia oraz prędkości danej osoby, natomiast na podstawie aktualnie wykrytych części głowy można estymować kierunek w jaki zwrócona jest twarz człowieka. W efekcie system aktualizuję mapę środowiska o strefę osobistą człowieka, co z kolei pozwola na odpowiednią nawigację. \\
 
-Doprecyzowane zadania niezbędne zrealizowania systemu przedstawiono w poniższej liście:
+Zadania niezbędne zrealizowania systemu przedstawiono poniżej:
 
 \begin{itemize}
 \item Przystosowanie istniejącego symulatora bazy jezdnej do integracji z pozostałymi elementami systemu
-\item Zdefiniowanie modelu Kinecta, zaimplementowanie jego logiki i dodanie do symulacji
+\item Stworzenie modelu czujnika Kinect w symulatorze
 \item Dodanie możliwości obrotu Kinecta w celu śledzenia wykrytego uprzednio człowieka
-\item Przygotowanie środowiska testowego w symulatorze Gazebo
-\item Dodanie do symulacji modelu człowieka oraz możliwości poruszania nim za pomocą klawiatury
-\item Zapewnienie lokalizacji robota
-\item Przygotowanie map kosztu
-\item Implementacja planisty trajektorii
-\item Implementacja kontrolera platformy mobilnej
-\item Detekcja nóg człowieka i śledzenie jego położenia oraz prędkości za pomocą sensorów LIDAR
-\item Detekcja cześci głowy człowieka za pomocą Kinecta i wyliczenie wektora reprezentującego kierunek twarzy osoby
-\item Dokonanie konkatenacji list ludzi wykrytych prez sensor LIDAR i Kinecta w celu stworzenia wspólnej listy wszystkich wykrytych ludzi
+\item Przygotowanie modelu środowiska testowego w symulatorze Gazebo
+\item Stworzenie modelu człowieka oraz możliwości poruszania nim za pomocą klawiatury
+\item Wykorzystanie algorytmów lokalizacji robota
+\item Wykorzystanie map kosztu do budowy modelu środowiska pracy robota
+\item Opracowanie i implementacja systemu planowania ścieżki ruchu
+\item Wykorzystanie sterownika platformy mobilnej
+\item Detekcja nóg człowieka i śledzenie jego położenia oraz prędkości za pomocą skanerów laserowych LIDAR
+\item Detekcja części głowy człowieka za pomocą czujnika Kinect w celu uzyskania wektora reprezentującego orientację twarzy osoby 
+\item Scalenie list ludzi wykrytych prez czujnik LIDAR i czujnik Kinecta w celu stworzenia wspólnej listy wszystkich wykrytych ludzi
 \item Implementacja strefy osobistej człowieka jako odpowiedniego kształtu widocznego na mapie kosztu 
 \end{itemize}
 
 
 \section{Założenia}
 
-Fundamentalnym założeniem jest wykorzystanie holonimicznej bazy jezdnej. Baza taka posiada zdolność do ruchu w dowolnym kierunku, w tym obrotu w miejscu. Pozwala to na większą elastyczność w wyborze dopuszczalnych trajektorii ruchu, co mogłoby stanowić istotny problem w przypadku wyboru np. robota o napędzie różnicowym.
+Fundamentalnym założeniem jest wykorzystanie dookólnej bazy jezdnej, wykorzystującej koła szwedzkie. Baza taka posiada zdolność do ruchu w dowolnym kierunku bez zmiany swojej orientacji. Zwiększa to wybór potencjalnych, dopuszczalnych ścieżek ruchu. Wybór robota ograniczonego więzami nieholonomicznymi mogłoby stanowić istotny problem. 
 
 W realizacji zadania zostanie użyty istniejący, odpowiednio przystosowany symulator bazy jezdnej robota Velma. Zastosowanie symulatora w znaczący sposób przyspiesza implementację, a przede wszystkim testowanie rozwiązania, bez potrzeby narażenia rzeczywistego robota na uszkodzenie wynikające z wadliwego działania systemu. Ważne jednak, by system w stosunkowo prosty sposób można było przenieść w przyszłości na rzeczywistą platformę.
 
-Przyjętym założeniem jest przyjęcie orientacji człowieka na podstawie orientacji jego głowy. Zadanie można rozwiązać inaczej, biorąc pod uwagę ustawienie jego tułowia, lecz zastosowana koncepcja jest interesująca z punktu widzenia zbadania sprawności detekcji tak niewielkich obiektów jak profil nosa.
+Przyjętym założeniem jest określenie orientacji człowieka na podstawie orientacji jego głowy. Zadanie można rozwiązać inaczej, biorąc pod uwagę ustawienie jego tułowia, lecz zastosowana koncepcja jest interesująca z punktu widzenia zbadania sprawności detekcji tak niewielkich obiektów jak profil twarzy człowieka. W celu detekcji wykorzystane będą modele czujników skanera laserowego LIDAR i czujnika Kinect.
+
+System powinien zostać zaimplementowany w sposób umożliwiający jego przeniesienie na platformę rzeczywistą.
 
 
 

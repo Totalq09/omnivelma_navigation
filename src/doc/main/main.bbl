@@ -10,38 +10,63 @@ E.~T. Hall, {\em The Hidden Dimension}.
 \newblock Anchor Books, 1966.
 
 \bibitem{dimension_zones}
-``E. t. hall – proxemics /personal space in different cultures {@ONLINE}.''
+``{E. T. Hall} - {Proxemics /Personal Space in Different Cultures}.''
   \url{https://laofutze.wordpress.com/category/e-t-hall-2/}.
 
 \bibitem{nrs}
-A.~Mateus", ``Human-aware navigation in networked robot systems.''
+{A.G. Mateus}, ``Human-aware navigation in networked robot systems.''
 \newblock Instituto Superior Tecnico.
 
+\bibitem{gauss_2}
+D.~Vasquez, P.~Stein, J.~Rios-Martinez, A.~Escobedo, A.~Spalanzani, and
+  C.~Laugier, ``Human aware navigation for assistive robotics,''
+
 \bibitem{survey_2}
-P.~Althaus, H.~Ishiguro, and T.~M. nad H.~Christensen", ``Navigation for
+P.~Althaus, H.~Ishiguro, T.~Miyashita, and H.~Christensen, ``Navigation for
   human–robot interaction tasks,'' {\em ICRA IEEE}, 2004.
 
 \bibitem{taxonomy}
 T.~Weerakoon, K.~Ishii, and A.~A.~F. Nassiraei, ``An artificial potential field
   based mobilee robot navigation method to prevent from deadlock,'' {\em
-  JAISCR}, vol.~5, no.~3, pp.~189--203, 2015.
+  Journal of Artificial Intelligence and Soft Computing Research}, vol.~5,
+  no.~3, pp.~189--203, 2015.
 
 \bibitem{planer_1}
 Y.~K. Hwang and N.~Ahuja, ``Gross motion planning: a survey,'' {\em ACM
   Computing Surveys (CSUR)}, vol.~24, no.~3, pp.~219--291, 1992.
 
 \bibitem{planer_2}
-P.~K. Mohanty and D.~R. Parhi, ``Controlling the mo- tion of an autonomous
-  mobile robot using various techniques: a review,'' {\em Journal of Advance
-  Me- chanical Engineering}, vol.~1, no.~1, pp.~24--39, 2013.
+P.~K. Mohanty and D.~R. Parhi, ``Controlling the motion of an autonomous mobile
+  robot using various techniques: a review,'' {\em Journal of Advance
+  Mechanical Engineering}, vol.~1, no.~1, pp.~24--39, 2013.
+
+\bibitem{dwa}
+O.~Brockand and O.~Khatib, ``High-speed navigation using the global dynamic
+  window approach,'' {\em Robotics Laboratory, Department of Computer Science
+  Stanford University, Stanford; International Conference on Robotics and
+  Automation Detroit. Michigan}.
 
 \bibitem{ma}
 E.~A. Sisbot, L.~F. Marin-Urias, R.~Alami, and T.~Siméon, ``A human aware
-  mobile robot motion planner,'' {\em IEEE TRANSACTIONS ON ROBOTICS}, vol.~23,
+  mobile robot motion planner,'' {\em IEEE Transactions on Robotics}, vol.~23,
   no.~5, 2007.
+
+\bibitem{markov}
+D.~A.~V. Govea, T.~Fraichard, and C.~Laugier, ``Growing hidden markov models:
+  An incremental tool for learning and predicting human and vehicle motion,''
+  {\em International Journal of Robotics Research}, vol.~28, 2009.
+
+\bibitem{survey_3}
+R.~Kirby, ``Social robot navigation,'' {\em Theses and Dissertations at
+  Research Showcase, Paper 552}, 2010.
 
 \bibitem{omnivelma}
 R.~Świątkiewicz, ``Symulacja dookólnej bazy mobilnej,'' 2018.
+\newblock Praca dyplomowa inżynierska, Politechnika Warszawska.
+
+\bibitem{kinect2}
+Microsoft, ``Project natal 101.''
+  \url{https://web.archive.org/web/20120121223600/http://download.microsoft.com/download/A/4/A/A4A457B3-DF5D-4BF2-AD4E-963454BA0BCC/ProjectNatalFactSheetMay09.zip}.
 
 \bibitem{kinect}
 Microsoft, ``Kinect for windows sensor components and specifications.''
@@ -52,8 +77,29 @@ OpenKinect, ``Openkinect protocol documentation.''
   \url{https://openkinect.org/wiki/Protocol_Documentation#Control_Commands;a=summary}.
 
 \bibitem{lidar}
-H.~E., ``3d laser scanning for heritage. advice and guidance to users on laser
-  scanning in archaeology and architecture.''
+H.~England, ``3d laser scanning for heritage. advice and guidance to users on
+  laser scanning in archaeology and architecture.''
   \url{www.english-heritage.org.uk}.
+
+\bibitem{ROS}
+W.~Garage, S.~A.~I. Laboratory, and O.~Robotics, ``Ros - robot operating
+  system.'' \url{http://www.ros.org}.
+
+\bibitem{prob}
+P.~Rabiński, ``Vision based gesture-driven human-robot interface,'' 2013.
+\newblock Praca dyplomowa inżynierska, Politechnika Warszawska.
+
+\bibitem{sdf}
+``Format sdf.'' \url{http://sdformat.org//}.
+
+\bibitem{gazebo}
+O.~Robotics, ``Symulator gazebo.'' \url{http://gazebosim.org/}.
+
+\bibitem{opencv}
+``Opencv library.''
+  \url{https://docs.opencv.org/master/d9/df8/tutorial_root.html/}.
+
+\bibitem{dlib}
+D.~E. King, ``Dlib library.'' \url{http://dlib.net/}.
 
 \end{thebibliography}
