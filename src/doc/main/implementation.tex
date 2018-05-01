@@ -1,0 +1,66 @@
+\chapter{Implementacja}
+
+
+W implementacji systemu będącego tematem niniejszej pracy można wyróżnić trzy składowe: \textbf{przygotowanie środowiska symulacyjnego}, \textbf{implementację modułu nawigacyjnego} oraz \textbf{implementację modułu detekcji ludzi}. Każdy z nich jest autonomiczny pod tym względem, że spełnia określone zadania i wymaga określonych danych z pozostałych modułów, ale system nie jest ograniczony do korzystania z konkretnego typu detektora, czy konkretnego modelu robota. Ważne jedynie by dane pochodzące z modułu miały konkretną postać. Jest to istotne ze względu na ewentualny dalszy rozwój projektu.
+
+\section{Środowisko symulacyjne}
+
+Do realizacji niniejszej pracy wykorzystano symulator platformy dookólnej \cite{omnivelma}. Model platformy przygotowany został w środowisku symulacyjnym Gazebo i zintegrowany ze środowiskiem ROS. Sterowanie modelem i odbieranie rozsyłanych przez niego danych odbywa się poprzez mechanizm wiadomości środowiska ROS. Wiadomości wykorzystywane przez model platformy prezentuję tabela [\ref{tab:topics}].
+
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{p{5cm}|p{5.5cm}|p{4cm}} 
+  \hline 
+  Nazwa tematu & Zawartość wiadomości & Opis\\
+  \hline
+  $omnivelma/pose$ & $geometry\_msgs/PoseStamped$ & pozycja i orientacja platformy wraz z numerem sekwencyjnym oraz nazwą okna (układu współrzędnych według którego podawane są wartości)\\
+  \hline
+  $omnivelma/twist$ & $geometry\_msgs/TwistStamped$ & prędkość liniowa i kątowa platformy, numer sekwencyjny i nazwa okna\\
+  \hline
+  $odom$ & $nav\_msgs/Odometry$ & scalone dane z $omnivelma/pose$ i $omnivelma/twist$\\
+  \hline
+  $omnivelma/vels$ & $omnivelma\_msgs/Vels$ & dane o prędkości kątowej każdego z kół platformy\\
+  \hline
+ $omnivelma/kinect\_rotation$ & $std\_msgs::Float64$ & absolutny kąt (w radianach) pomiędzy globalną osią x a osobą, w stronę której powinien obrócić się czujnik kinect\\
+  \hline
+$monokl\_l/scan$ & $sensor\_msgs/LaserScan$ & odczyt pomiarów lewego czujnika laserowego\\
+  \hline
+  $monokl\_r/scan$ & $sensor\_msgs/LaserScan$ & odczyt pomiarów prawego czujnika laserowego\\
+  \hline
+\end{tabular} 
+\caption{Wiadomości środowiska ROS wykorzystywane przez model platformy}
+\label{tab:topics}
+\end{table}
+
+Model platformy przygotowany przez R. Świątkiewicza \cite{omnivelma} został zaimplementowany w pliku o formacie SDF, który następnie interpretowany jest przez środowisko symulacyjne Gazebo. Działanie modelu zaimplementowano używając mechanizmu wtyczek, wykorzystującego interfejs Gazebo.\\
+
+Aby nadać prędkość liniową lub kątową platformie należy nadać wiadomość na temat $omnivelma/vels$. Temat ten operuję na zdefiniowanych przez autora wiadomościach typu $omnivelma\_msgs/Vels$ zawierających cztery liczby zmiennoprzecinkowe reprezentujące prędkości kątowe każdego z czterech kół platformy. Aby zadać prędkości w formie $v_{x}$, $v_{y}$, $w_{z}$, który będzie wykorzystywany w systemie, powstał moduł przyjmujący zadane prędkości w formie prędkości liniowych i kątowych na temacie $cmd\_vel$ zawierającym wiadomości typu $geometry\_msgs/Twist$, przeliczający je na prędkość poszczególnych kół (korzystając z równania kinematyki odwrotnej \eqref{eq:kinematic_2}), a następnie nadający je na temat $omnivelma/vels$ odczytywany przez model platformy. Zadane prędkości utrzymywane są do czasu zadania nowych.\\
+
+Pierwotny model nie posiadał implementacji czujnika Kinect, dlatego w toku prac dodano jego obsługę w symulacji. Czujnik Kinect nie jest bezpośrednio dostępny jako gotowy model w środowisku Gazebo, jednak producent symulatora \cite{gazebo_kinect} prezentuję sposób jego implementacji. Model (jego reprezentacja graficzna oraz własności fizyczne) został zapisany w formacie SDF. W pliku znajdują się również informację o typie czujnika. Gazebo dostarcza wtyczki $libgazebo\_ros\_openni\_kinect.so$, która imituję działanie rzeczywistego Kinecta, wykorzystującego bibliotekę $OpenNI$ \cite{openni}. $OpenNI$ integruję działanie czujnika Kinect z systemem ROS, rozsyłając dane o obrazie RGB, głębi i chmurę punktów na odpowiednich tematach środowiska ROS. Dzięki $libgazebo\_ros\_openni\_kinect.so$ model czujnika Kinect rozsyła pomiary z użyciem takich samych typów danych i na takich samych tematach środowiska ROS co rzeczywiste urządzenie. Poniżej znajduję się najistotniejsza część pliku SDF, ukazująca sposób implementacji, a także możliwe do manipulacji właściwości modelu.
+
+    \lstset{
+    language=xml,
+    tabsize=3,
+    %frame=lines,
+    caption=Część pliku kinect.sdf zawierający implementację modelu czujnika Kinect,
+    label=code:sample,
+    frame=single,
+    rulesepcolor=\color{gray},
+    xleftmargin=20pt,
+    framexleftmargin=15pt,
+    keywordstyle=\color{blue}\bf,
+    commentstyle=\color{green},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny,
+    numbersep=5pt,
+    breaklines=true,
+    showstringspaces=false,
+    basicstyle=\scriptsize,
+    emph={sensor,camera,plugin},emphstyle={\color{magenta}}}
+    \lstinputlisting{kinect.xml}
+    
+Parametr \textit{sensor} definiuję typ czujnika, \textit{camera} definiuję parametry generowanego obrazu, natomiast \textit{plugin} zawiera parametry wtyczki imitującej działanie biblioteki $OpenNI$ - nazwy tematów środowiska ROS na których przesyłane są obrazy i chmura punktów, czy poziom zakłóceń.
+

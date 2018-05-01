@@ -65,7 +65,7 @@ R.~Świątkiewicz, ``Symulacja dookólnej bazy mobilnej,'' 2018.
 \newblock Praca dyplomowa inżynierska, Politechnika Warszawska.
 
 \bibitem{kinect2}
-Microsoft, ``Project natal 101.''
+Microsoft, ``{Project Natal 101}.''
   \url{https://web.archive.org/web/20120121223600/http://download.microsoft.com/download/A/4/A/A4A457B3-DF5D-4BF2-AD4E-963454BA0BCC/ProjectNatalFactSheetMay09.zip}.
 
 \bibitem{kinect}
@@ -101,5 +101,12 @@ O.~Robotics, ``Symulator gazebo.'' \url{http://gazebosim.org/}.
 
 \bibitem{dlib}
 D.~E. King, ``Dlib library.'' \url{http://dlib.net/}.
+
+\bibitem{gazebo_kinect}
+O.~Robotics, ``Model czujnika kinect w środowisku gazebo.''
+  \url{http://gazebosim.org/tutorials?tut=ros_depth_camera&cat=connect_ros}.
+
+\bibitem{openni}
+``Openni framework.'' \url{http://openni.ru/openni-sdk/index.html}.
 
 \end{thebibliography}

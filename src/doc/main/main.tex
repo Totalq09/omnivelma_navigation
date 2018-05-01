@@ -16,9 +16,13 @@
 \usepackage{float}
 \usepackage{geometry}
 \usepackage{tikz}
-    
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{color}
+\geometry{a4paper}
 
 \newcommand{\capequation}[1]{\begin{center} #1 \end{center}}
+\renewcommand{\lstlistingname}{Kod}% Listing -> Kod
 
 \renewcommand{\familydefault}{\sfdefault}
 
@@ -37,6 +41,7 @@
 \input{existing.tex}
 \input{hardware.tex}
 \input{software.tex}
+\input{implementation.tex}
 
 \bibliography{bib}{}
 \bibliographystyle{ieeetr}

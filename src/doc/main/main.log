@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.16)  28 APR 2018 15:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.16)  1 MAY 2018 12:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -974,28 +974,53 @@ File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
-))) (./main.aux)
+)))
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count156
+\lst@gtempboxa=\box41
+\lst@token=\toks37
+\lst@length=\count157
+\lst@currlwidth=\dimen184
+\lst@column=\count158
+\lst@pos=\count159
+\lst@lostspace=\dimen185
+\lst@width=\dimen186
+\lst@newlines=\count160
+\lst@lineno=\count161
+\lst@maxwidth=\dimen187
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count162
+\lst@skipnumbers=\count163
+\lst@framebox=\box42
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+ (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Try loading font information for OT4+cmss on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Try loading font information for OT4+cmss on input line 29.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/polski/ot4cmss.fd
@@ -1005,16 +1030,16 @@ File: ot4cmss.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
-* paper: <default>
+* paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(85.35826pt, 472.03123pt, 56.9055pt)
-* v-part:(T,H,B)=(56.9055pt, 652.70622pt, 85.35826pt)
-* \paperwidth=614.295pt
-* \paperheight=794.96999pt
-* \textwidth=472.03123pt
-* \textheight=652.70622pt
+* h-part:(L,W,R)=(85.35826pt, 455.24411pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 702.78308pt, 85.35826pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=702.78308pt
 * \oddsidemargin=13.08827pt
 * \evensidemargin=13.08827pt
 * \topmargin=-52.36449pt
@@ -1035,19 +1060,19 @@ File: ot4cmss.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box41
-Package hyperref Info: Link coloring OFF on input line 25.
+\AtBeginShipoutBox=\box43
+Package hyperref Info: Link coloring OFF on input line 29.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count156
+\c@section@level=\count164
 )
-LaTeX Info: Redefining \ref on input line 25.
-LaTeX Info: Redefining \pageref on input line 25.
-LaTeX Info: Redefining \nameref on input line 25.
+LaTeX Info: Redefining \ref on input line 29.
+LaTeX Info: Redefining \pageref on input line 29.
+LaTeX Info: Redefining \nameref on input line 29.
 
 (./main.out) (./main.out)
 \@outlinefile=\write4
@@ -1056,17 +1081,17 @@ LaTeX Info: Redefining \nameref on input line 25.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count157
-\scratchdimen=\dimen184
-\scratchbox=\box42
-\nofMPsegments=\count158
-\nofMParguments=\count159
-\everyMPshowfont=\toks37
-\MPscratchCnt=\count160
-\MPscratchDim=\dimen185
-\MPnumerator=\count161
-\makeMPintoPDFobject=\count162
-\everyMPtoPDFconversion=\toks38
+\scratchcounter=\count165
+\scratchdimen=\dimen188
+\scratchbox=\box44
+\nofMPsegments=\count166
+\nofMParguments=\count167
+\everyMPshowfont=\toks38
+\MPscratchCnt=\count168
+\MPscratchDim=\dimen189
+\MPnumerator=\count169
+\makeMPintoPDFobject=\count170
+\everyMPtoPDFconversion=\toks39
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -1084,20 +1109,23 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
-ABD: EveryShipout initializing macros (./start.tex
-<gfx/pw_logo.jpg, id=75, 483.7272pt x 76.8471pt>
+ABD: EveryShipout initializing macros
+\c@lstlisting=\count171
+ (./start.tex
+<gfx/pw_logo.jpg, id=83, 483.7272pt x 76.8471pt>
 File: gfx/pw_logo.jpg Graphic file (type jpg)
  <use gfx/pw_logo.jpg>
 Package pdftex.def Info: gfx/pw_logo.jpg used on input line 4.
-(pdftex.def)             Requested size: 472.03123pt x 74.98952pt.
+(pdftex.def)             Requested size: 455.24411pt x 72.32304pt.
 
-<gfx/pdi.png, id=76, 483.7272pt x 105.39375pt>
+<gfx/pdi.png, id=84, 483.7272pt x 105.39375pt>
 File: gfx/pdi.png Graphic file (type png)
  <use gfx/pdi.png>
 Package pdftex.def Info: gfx/pdi.png used on input line 8.
-(pdftex.def)             Requested size: 472.03123pt x 102.84612pt.
+(pdftex.def)             Requested size: 455.24411pt x 99.18912pt.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./gfx/pw_logo.jpg> <./gfx/
@@ -1108,9 +1136,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--10
  []
 
 
-Overfull \hbox (8.76628pt too wide) in paragraph at lines 11--15
-[]\OT4/cmss/m/n/12 Celem pracy in-»y-nier-skiej byªo przy-go-to-wa-nie sys-temu
- po-zwa-la-j¡-cego na uni-ka-nie ko-li-zji czªowiek-
+Overfull \hbox (11.84605pt too wide) in paragraph at lines 11--15
+[]\OT4/cmss/m/n/12 System zbu-do-wano z wy-ko-rzy-sta-niem pro-gra-mo-wej struk
+-tury ra-mo-wej ROS, bi-blio-tek OpenCV
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
@@ -1179,28 +1207,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--13
 
  []
 
-<gfx/882px-Personal_Spacepl.png, id=131, 885.3075pt x 870.25125pt>
+<gfx/882px-Personal_Spacepl.png, id=141, 885.3075pt x 870.25125pt>
 File: gfx/882px-Personal_Spacepl.png Graphic file (type png)
 
 <use gfx/882px-Personal_Spacepl.png>
 Package pdftex.def Info: gfx/882px-Personal_Spacepl.png used on input line 25.
-(pdftex.def)             Requested size: 283.22162pt x 278.40642pt.
+(pdftex.def)             Requested size: 273.14923pt x 268.50032pt.
  [7
 
 ]
-<gfx/cost_zone.png, id=148, 583.17876pt x 173.64874pt>
+<gfx/cost_zone.png, id=158, 583.17876pt x 173.64874pt>
 File: gfx/cost_zone.png Graphic file (type png)
  <use gfx/cost_zone.png>
 Package pdftex.def Info: gfx/cost_zone.png used on input line 34.
-(pdftex.def)             Requested size: 354.02342pt x 105.41684pt.
+(pdftex.def)             Requested size: 341.43307pt x 101.66756pt.
 
 [8 <./gfx/882px-Personal_Spacepl.png>]
-<gfx/taksonomia_planery.png, id=163, 1214.5375pt x 592.2125pt>
+<gfx/taksonomia_planery.png, id=174, 1214.5375pt x 592.2125pt>
 File: gfx/taksonomia_planery.png Graphic file (type png)
 
 <use gfx/taksonomia_planery.png>
 Package pdftex.def Info: gfx/taksonomia_planery.png used on input line 43.
-(pdftex.def)             Requested size: 424.82523pt x 207.14192pt.
+(pdftex.def)             Requested size: 409.71692pt x 199.77724pt.
 
 
 LaTeX Warning: Command \' invalid in math mode on input line 49.
@@ -1218,35 +1246,35 @@ Missing character: There is no ¦ in font plmi12!
 
 LaTeX Warning: Command \textendash invalid in math mode on input line 65.
 
-[11]) (./hardware.tex [12]
+) (./hardware.tex [11]
 Rozdzia\l  3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
-<gfx/omnivelma.png, id=213, 2860.6875pt x 2025.5675pt>
+<gfx/omnivelma.png, id=218, 2860.6875pt x 2025.5675pt>
 File: gfx/omnivelma.png Graphic file (type png)
  <use gfx/omnivelma.png>
 Package pdftex.def Info: gfx/omnivelma.png used on input line 9.
-(pdftex.def)             Requested size: 259.6186pt x 183.80768pt.
+(pdftex.def)             Requested size: 250.38564pt x 177.28616pt.
 
-[13
+[12
 
- <./gfx/omnivelma.png>] <gfx/wheels.png, id=225, 1066.98625pt x 399.4925pt>
+ <./gfx/omnivelma.png>] <gfx/wheels.png, id=231, 1066.98625pt x 399.4925pt>
 File: gfx/wheels.png Graphic file (type png)
 
 <use gfx/wheels.png>
 Package pdftex.def Info: gfx/wheels.png used on input line 18.
-(pdftex.def)             Requested size: 236.01561pt x 88.36409pt.
- <gfx/vectors.png, id=229, 1387.1825pt x 380.42125pt>
+(pdftex.def)             Requested size: 227.62206pt x 85.22476pt.
+ <gfx/vectors.png, id=235, 1387.1825pt x 380.42125pt>
 File: gfx/vectors.png Graphic file (type png)
 
 <use gfx/vectors.png>
 Package pdftex.def Info: gfx/vectors.png used on input line 27.
-(pdftex.def)             Requested size: 424.82523pt x 116.50139pt.
- [14 <./gfx/wheels.png> <./gfx/vectors.png>]
-<gfx/vectors2.png, id=240, 337.26pt x 348.30125pt>
+(pdftex.def)             Requested size: 409.71692pt x 112.3626pt.
+ [13 <./gfx/wheels.png> <./gfx/vectors.png>]
+<gfx/vectors2.png, id=248, 337.26pt x 348.30125pt>
 File: gfx/vectors2.png Graphic file (type png)
  <use gfx/vectors2.png>
 Package pdftex.def Info: gfx/vectors2.png used on input line 59.
@@ -1256,13 +1284,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
 
-[15 <./gfx/vectors2.png>]
-<gfx/kinect2pl.png, id=252, 432.86719pt x 222.07968pt>
+<gfx/kinect2pl.png, id=251, 432.86719pt x 222.07968pt>
 File: gfx/kinect2pl.png Graphic file (type png)
  <use gfx/kinect2pl.png>
 Package pdftex.def Info: gfx/kinect2pl.png used on input line 76.
-(pdftex.def)             Requested size: 377.62642pt x 193.74655pt.
+(pdftex.def)             Requested size: 364.19667pt x 186.8574pt.
 
+[14 <./gfx/vectors2.png>]
 Underfull \hbox (badness 3209) in paragraph at lines 89--89
 []\OT4/cmss/m/n/12 Rozdzielczo±¢ ob-razu gª¦bi
  []
@@ -1272,48 +1300,115 @@ Underfull \hbox (badness 4205) in paragraph at lines 99--100
 []\OT4/cmss/m/n/12 Macierz czte-rech mi-kro-fo-nów 24-bit,
  []
 
-[16 <./gfx/kinect2pl.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 105--106
 
  []
 
-
+[15 <./gfx/kinect2pl.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
 
-[17] <gfx/lidar.png, id=273, 1137.24875pt x 1477.52pt>
+<gfx/lidar.png, id=274, 1137.24875pt x 1477.52pt>
 File: gfx/lidar.png Graphic file (type png)
  <use gfx/lidar.png>
 Package pdftex.def Info: gfx/lidar.png used on input line 116.
-(pdftex.def)             Requested size: 155.77116pt x 202.36491pt.
-
-[18 <./gfx/lidar.png>]) (./software.tex [19]
+(pdftex.def)             Requested size: 150.23138pt x 195.17302pt.
+ [16 <./gfx/lidar.png>]) (./software.tex [17]
 Rozdzia\l  4.
-[20
+[18
 
-] [21] <gfx/omnidirectional.png, id=312, 434.62375pt x 295.1025pt>
+] [19] <gfx/omnidirectional.png, id=315, 434.62375pt x 295.1025pt>
 File: gfx/omnidirectional.png Graphic file (type png)
 
 <use gfx/omnidirectional.png>
 Package pdftex.def Info: gfx/omnidirectional.png used on input line 32.
-(pdftex.def)             Requested size: 236.01561pt x 160.25354pt.
- [22 <./gfx/omnidirectional.png>]
+(pdftex.def)             Requested size: 227.62206pt x 154.55287pt.
+ [20 <./gfx/omnidirectional.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
 
-) (./main.bbl [23]
+) (./implementation.tex [21]
+Rozdzia\l  5.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <10.95> on input line 14.
+
+Underfull \hbox (badness 1325) in paragraph at lines 18--19
+\OT4/cmss/m/n/10.95 se-kwen-cyj-nym oraz na-
+ []
+
+
+Underfull \hbox (badness 2469) in paragraph at lines 20--21
+[]\OT4/cmss/m/n/10.95 pr¦dko±¢ li-niowa i k¡-
+ []
+
+
+Underfull \hbox (badness 2512) in paragraph at lines 20--21
+\OT4/cmss/m/n/10.95 towa plat-formy, nu-mer
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+\OT4/cmss/m/n/10.95 se-kwen-cyjny i na-zwa
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
+[]\OT4/cmss/m/n/10.95 scalone dane z
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
+\OML/plm/m/it/10.95 omnivelma=pose$ \OT4/cmss/m/n/10.95 i
+ []
+
+
+Underfull \hbox (badness 6047) in paragraph at lines 30--31
+[]\OT4/cmss/m/n/10.95 odczyt po-mia-rów pra-
+ []
+
+[22
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 37--38
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
+
+ []
+
+[23] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 63.
+ (./kinect.xml
+LaTeX Font Info:    Try loading font information for OML+cmss on input line 1.
+LaTeX Font Info:    No file OMLcmss.fd. on input line 1.
+
+
+LaTeX Font Warning: Font shape `OML/cmss/m/n' undefined
+(Font)              using `OML/cmm/m/it' instead
+(Font)              for symbol `textless' on input line 1.
+
+[24])) (./main.bbl [25]
 LaTeX Font Info:    Try loading font information for OT4+cmtt on input line 14.
 
- (/usr/share/texlive/texmf-dist/tex/latex/polski/ot4cmtt.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/polski/ot4cmtt.fd
 File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
-)
-[24
+) [26
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 68--70
-[]\OT4/cmss/m/n/12 Microsoft, ``Pro-ject na-tal 101.'' []$\OT4/cmtt/m/n/12 http
+[]\OT4/cmss/m/n/12 Microsoft, ``Pro-ject Na-tal 101.'' []$\OT4/cmtt/m/n/12 http
 s : / / web . archive . org / web /
  []
 
@@ -1323,47 +1418,57 @@ Underfull \hbox (badness 10000) in paragraph at lines 68--70
 oad / A / 4 / A /
  []
 
-[25]) [26]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 46.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 46.
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--101
+[]\OT4/cmss/m/n/12 ``Opencv li-brary.'' []$\OT4/cmtt/m/n/12 https : / / docs . 
+opencv . org / master / d9 / df8 / tutorial _ root .
+ []
+
+[27]) [28]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 51.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 46.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 46.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 51.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 51.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 8844FB65CFA906556CF818F08A875280;2031.
+(rerunfilecheck)             Checksum: 8D2C369EDE44325E156D14E7CBE6B84C;2311.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 46.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 51.
  ) 
 Here is how much of TeX's memory you used:
- 21906 strings out of 494303
- 380127 string characters out of 6163272
- 447117 words of memory out of 5000000
- 24774 multiletter control sequences out of 15000+600000
- 13555 words of font info for 38 fonts, out of 8000000 for 9000
+ 23726 strings out of 494303
+ 404288 string characters out of 6163272
+ 527615 words of memory out of 5000000
+ 26521 multiletter control sequences out of 15000+600000
+ 15558 words of font info for 43 fonts, out of 8000000 for 9000
  392 hyphenation exceptions out of 8191
- 55i,12n,54p,1950b,548s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,15n,54p,1950b,2081s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/pltt.enc}{/usr/share/texliv
-e/texmf-dist/fonts/enc/dvips/pl/plme.enc}{/usr/share/texlive/texmf-dist/fonts/e
-nc/dvips/pl/plms.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plrm.enc
-}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plmi.enc}</usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/pl/plex10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/pl/plmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/pl
-mi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr12.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/pl/plr8.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/pl/plss12.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/pl/plss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/pl
-ssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plssi12.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/pl/plsy8.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/pl/pltt12.pfb>
-Output written on main.pdf (27 pages, 6985143 bytes).
+e/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/share/texlive/texmf-dist/fonts/e
+nc/dvips/pl/plmi.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plme.enc
+}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plms.enc}</usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/pl/plex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/pl/plmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plmi12.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plmi8.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/pl/plr10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/pl/plr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/pl/plr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plss10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plss12.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/pl/plss17.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/pl/plss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/pl/plssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plssi
+12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/pl/plsy8.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/pl/pltt12.pfb>
+Output written on main.pdf (29 pages, 7033228 bytes).
 PDF statistics:
- 430 PDF objects out of 1000 (max. 8388607)
- 357 compressed objects within 4 object streams
- 87 named destinations out of 1000 (max. 500000)
- 209 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 525 PDF objects out of 1000 (max. 8388607)
+ 444 compressed objects within 5 object streams
+ 129 named destinations out of 1000 (max. 500000)
+ 225 words of extra memory for PDF output out of 10000 (max. 10000000)
 
